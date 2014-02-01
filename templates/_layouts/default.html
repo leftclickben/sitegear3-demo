@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}Untitled{% endblock %} :: {{ siteName }}</title>
+	<base href="{{ baseUrl }}">
+	{%- block stylesheets %}
+	<link rel="stylesheet" href="css/main.css">
+	{%- endblock %}
+</head>
+<body>
+<div class="container">
+	<header>
+		<a href=""><img src="images/logo.png" class="logo" alt="Demo Site" /></a>
+	</header>
+	<nav>
+{% include '../_components/navigation.html' %}
+	</nav>
+	<article>
+{% block main %}{% endblock %}
+	</article>
+	<footer>
+		<p><time datetime="{{ formatDate(now, 'iso') }}">{{ formatDate(now, 'locale') }}</time></p>
+	</footer>
+{% block scripts %}{% endblock %}
+</div>
+</body>
+</html>
