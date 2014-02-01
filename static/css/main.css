@@ -1,0 +1,12 @@
+* { font-family: sans-serif; }
+html, body { margin: 0; padding: 0; background-color: #ccc; }
+.container { width: 800px; margin: 1em auto; border: solid 1px #666; background-color: #fff; }
+header { padding: .5em 1em; border-bottom: solid 1px #666; background-color: #eee; }
+header img.logo { display: inline-block; width: 120px; height: 60px; font-weight: bold; background-color: #ddd; color: #000; text-align: center; }
+nav { border-bottom: solid 1px #666; background-color: #ddd; }
+nav ul, nav ul li { display: inline; list-style: none; margin: 0; padding: 0; }
+nav ul li a { display: inline-block; padding: .5em 1em; text-decoration: none; color: #08f; font-weight: bold; }
+nav ul li a:hover { background-color: #ffe; }
+article { padding: .5em 1em; }
+footer { padding: .5em 1em; border-top: solid 1px #666; background-color: #eee; }
+footer p { margin: .25em 0; font-size: small; }
