@@ -1,6 +1,6 @@
 {
   "name": "sitegear3-demo-website",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Demonstrates features of Sitegear3 web cms",
   "homepage": "http://testdrive.sitegear.org/",
   "dependencies": {
