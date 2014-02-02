@@ -26,8 +26,24 @@
 		productCategoryCollection.set('widgets/plastic', { name: 'Plastic Widgets' });
 		productCategoryCollection.set('widgets/carbon', { name: 'Carbon Widgets' });
 		productCategoryCollection.set('gizmos', { name: 'Gizmos' });
-		productCategoryCollection.set('gizmos/round', { name: 'Round Gizmos' });
 		productCategoryCollection.set('gizmos/square', { name: 'Square Gizmos' });
 		productCategoryCollection.set('gizmos/long', { name: 'Long Gizmos' });
+
+		// Add seed data - product items
+		productItemCollection.set('acme-steel-widget-type-a', { name: 'ACME Steel Widget: Type A' });
+		productItemCollection.set('acme-steel-widget-type-b', { name: 'ACME Steel Widget: Type B' });
+		productItemCollection.set('signature-steel-widget', { name: 'Signature Steel Widget' });
+		productItemCollection.set('generic-plastic-widget', { name: 'Generic Plastic Widget' });
+		productItemCollection.set('signature-plastic-widget', { name: 'Signature Plastic Widget' });
+		productItemCollection.set('black-carbon-widget', { name: 'Black Carbon Widget' });
+		productItemCollection.set('extreme-carbon-widget', { name: 'Extreme Carbon Widget' });
+		productItemCollection.set('signature-carbon-widget', { name: 'Signature Carbon Widget' });
+		productItemCollection.set('basic-square-gizmo', { name: 'Basic Square Gizmo' });
+		productItemCollection.set('basic-plus-square-gizmo', { name: 'Basic Plus Square Gizmo' });
+		productItemCollection.set('signature-square-gizmo', { name: 'Signature Square Gizmo' });
+		productItemCollection.set('basic-long-gizmo', { name: 'Basic Long Gizmo' });
+		productItemCollection.set('basic-long-square-gizmo', { name: 'Basic Plus Long Gizmo' });
+		productItemCollection.set('signature-long-gizmo', { name: 'Signature Long Gizmo' });
+		productItemCollection.set('supreme-long-gizmo', { name: 'Supreme Long Gizmo' });
 	});
 }(require('sitegear3')));
