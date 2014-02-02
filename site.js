@@ -10,41 +10,42 @@
 (function (poweredBy, sitegear3, swig, fs) {
 	"use strict";
 
-	// Create the application instance
-	var app = sitegear3();
+	sitegear3.ready(function () {
+		// Create the application instance
+		var app = sitegear3();
 
-	// Pre-configure
-	if (app.get('env') === 'development') {
-		swig.setDefaults({ cache: false });
-	}
-
-	// Generic setup code
-	app.initialise(require('./settings.json'))
-		.use(poweredBy('sitegear3'))
-		.use(sitegear3.logger())
-		.use(sitegear3.compress())
-		.use(sitegear3.static(__dirname + '/static'))
-		.use(sitegear3.cookieParser())
-		.use(sitegear3.cookieSession({ "baseKey": "sitegear3.session", "secret": "Sitegear3" }))
-		.use(sitegear3.csrf())
-		.use(sitegear3.prepareView(app))
-		.use(app.router)
-		.use(sitegear3.notFound())
-		.use(sitegear3.internalServerError())
-		.persistence('filesystem', { root: __dirname + '/data' })
-		.mapRoutes(require('./routes.json'))
-		.engine('html', swig.renderFile)
-		.set('views', __dirname + '/templates');
-
-	// Start http
-	app.start(8080);
-
-	// Read PFX and start https in callback
-	fs.readFile('./certificates/localhost.pfx', function (error, data) {
-		if (error) {
-			throw error;
+		// Pre-configure
+		if (app.get('env') === 'development') {
+			swig.setDefaults({ cache: false });
 		}
-		app.start({ pfx: data }, 8443);
-	})
 
+		// Generic setup code
+		app.initialise(require('./settings.json'))
+			.use(poweredBy('sitegear3'))
+			.use(sitegear3.connect.logger())
+			.use(sitegear3.connect.compress())
+			.use(sitegear3.connect.static(__dirname + '/static'))
+			.use(sitegear3.connect.cookieParser())
+			.use(sitegear3.connect.cookieSession({ "baseKey": "sitegear3.session", "secret": "Sitegear3" }))
+			.use(sitegear3.connect.csrf())
+			.use(sitegear3.helpers.prepareView(app))
+			.use(app.router)
+			.use(sitegear3.helpers.notFound())
+			.use(sitegear3.helpers.internalServerError())
+			.persistence('filesystem', { root: __dirname + '/data' })
+			.mapRoutes(require('./routes.json'))
+			.engine('html', swig.renderFile)
+			.set('views', __dirname + '/templates');
+
+		// Start http
+		app.start(8080);
+
+		// Read PFX and start https in callback
+		fs.readFile('./certificates/localhost.pfx', function (error, data) {
+			if (error) {
+				throw error;
+			}
+			app.start({ pfx: data }, 8443);
+		});
+	});
 }(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs')));
