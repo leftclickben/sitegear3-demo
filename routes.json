@@ -1,10 +1,19 @@
-{
-	"/": {},
-	"/about": {},
-	"/about/board": {},
-	"/products": { "module": "products", "action": "index" },
-	"/products/category/:category": { "module": "products", "action": "category" },
-	"/products/product/:product": { "module": "products", "action": "product" },
-	"/contact": {},
-	"/contact/thankyou": {}
-}
+[
+	{
+		"path": "/products",
+		"module": "products"
+	},
+	{
+		"path": "/products/category/:category",
+		"module": "products",
+		"action": "category"
+	},
+	{
+		"path": "/products/item/:item",
+		"module": "products",
+		"action": "item"
+	},
+	{
+		"path": "*"
+	}
+]
