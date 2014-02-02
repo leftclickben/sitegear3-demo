@@ -9,9 +9,9 @@
 	sitegear3.ready(function () {
 		// Create and initialise the application instance
 		var app = sitegear3().initialise(require('../settings.json')).persistence('filesystem', { root: __dirname }),
-			pageCollection = app.interfaces.storage.collection('page'),
-			productItemCollection = app.interfaces.storage.collection('productItem'),
-			productCategoryCollection = app.interfaces.storage.collection('productCategory');
+			pageCollection = app.storage.collection('page'),
+			productItemCollection = app.storage.collection('productItem'),
+			productCategoryCollection = app.storage.collection('productCategory');
 
 		// Add seed data - pages
 		pageCollection.set('index', { title: 'Home Page', main: '<h1>Demo Site</h1>\r\n<p>Demo site for Sitegear3, now implemented in Node.js!</p>\r\n<p>Read all <a href="about">about us</a>, browse our demo <a href="products">products</a> catalogue, or <a href="contact">talk to us</a>.</p>' });
