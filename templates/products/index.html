@@ -5,4 +5,9 @@
 <p>
 This is the top level products landing page.
 </p>
+<ul>
+{% for category in categories %}
+	<li><a href="products/category/{{ loop.key }}">{{ category.name }}</a></li>
+{% endfor %}
+</ul>
 {% endblock %}
