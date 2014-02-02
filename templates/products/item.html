@@ -1,0 +1,8 @@
+{% extends '../_layouts/default.html' %}
+{% block title %}{{ item.name }}{% endblock %}
+{% block main %}
+<h1>Product: {{ item.name }}</h1>
+<p>
+This is the {{ item.name.toLowerCase() }} product details page.
+</p>
+{% endblock %}
