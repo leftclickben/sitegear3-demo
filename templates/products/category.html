@@ -1,8 +1,8 @@
 {% extends '../_layouts/default.html' %}
-{% block title %}{{ slug }}{% endblock %}
+{% block title %}{{ category.name }}{% endblock %}
 {% block main %}
-<h1>Category: {{ slug }}</h1>
+<h1>{{ category.name }} Category</h1>
 <p>
-This is the category landing page.
+This is the {{ category.name.toLowerCase() }} category landing page.
 </p>
 {% endblock %}
