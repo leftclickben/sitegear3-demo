@@ -5,4 +5,7 @@
 <p>
 This is the {{ item.name.toLowerCase() }} product details page.
 </p>
+<p>
+The price is {{ getDisplayPrice(item.getPrice(user)) }}.
+</p>
 {% endblock %}
