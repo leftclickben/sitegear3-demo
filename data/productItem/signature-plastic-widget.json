@@ -1,3 +1,6 @@
 {
-	"name": "Signature Plastic Widget"
+	"name": "Signature Plastic Widget",
+	"prices": {
+		"retail": 4000
+	}
 }

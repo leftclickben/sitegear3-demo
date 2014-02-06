@@ -1,3 +1,7 @@
 {
-	"name": "Basic Square Gizmo"
+	"name": "Basic Square Gizmo",
+	"prices": {
+		"retail": 2000,
+		"wholesale": 1750
+	}
 }
