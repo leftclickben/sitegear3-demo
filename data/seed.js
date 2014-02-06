@@ -30,20 +30,20 @@
 		productCategoryRepository.set('gizmos/long', { name: 'Long Gizmos' });
 
 		// Add seed data - product items
-		productItemRepository.set('acme-steel-widget-type-a', { name: 'ACME Steel Widget: Type A' });
-		productItemRepository.set('acme-steel-widget-type-b', { name: 'ACME Steel Widget: Type B' });
-		productItemRepository.set('signature-steel-widget', { name: 'Signature Steel Widget' });
-		productItemRepository.set('generic-plastic-widget', { name: 'Generic Plastic Widget' });
-		productItemRepository.set('signature-plastic-widget', { name: 'Signature Plastic Widget' });
-		productItemRepository.set('black-carbon-widget', { name: 'Black Carbon Widget' });
-		productItemRepository.set('extreme-carbon-widget', { name: 'Extreme Carbon Widget' });
-		productItemRepository.set('signature-carbon-widget', { name: 'Signature Carbon Widget' });
-		productItemRepository.set('basic-square-gizmo', { name: 'Basic Square Gizmo' });
-		productItemRepository.set('basic-plus-square-gizmo', { name: 'Basic Plus Square Gizmo' });
-		productItemRepository.set('signature-square-gizmo', { name: 'Signature Square Gizmo' });
-		productItemRepository.set('basic-long-gizmo', { name: 'Basic Long Gizmo' });
-		productItemRepository.set('basic-long-square-gizmo', { name: 'Basic Plus Long Gizmo' });
-		productItemRepository.set('signature-long-gizmo', { name: 'Signature Long Gizmo' });
-		productItemRepository.set('supreme-long-gizmo', { name: 'Supreme Long Gizmo' });
+		productItemRepository.set('acme-steel-widget-type-a', { name: 'ACME Steel Widget: Type A', prices: { retail: 10000, wholesale: 8000 } });
+		productItemRepository.set('acme-steel-widget-type-b', { name: 'ACME Steel Widget: Type B', prices: { retail: 11000, wholesale: 8500 } });
+		productItemRepository.set('signature-steel-widget', { name: 'Signature Steel Widget', prices: { retail: 13000 } });
+		productItemRepository.set('generic-plastic-widget', { name: 'Generic Plastic Widget', prices: { retail: 3000, wholesale: 2500 } });
+		productItemRepository.set('signature-plastic-widget', { name: 'Signature Plastic Widget', prices: { retail: 4000 } });
+		productItemRepository.set('black-carbon-widget', { name: 'Black Carbon Widget', prices: { retail: 20000, wholesale: 16000 } });
+		productItemRepository.set('extreme-carbon-widget', { name: 'Extreme Carbon Widget', prices: { retail: 250000, wholesale: 22000 } });
+		productItemRepository.set('signature-carbon-widget', { name: 'Signature Carbon Widget', prices: { retail: 230000 } });
+		productItemRepository.set('basic-square-gizmo', { name: 'Basic Square Gizmo', prices: { retail: 2000, wholesale: 1750 } });
+		productItemRepository.set('basic-plus-square-gizmo', { name: 'Basic Plus Square Gizmo', prices: { retail: 2200, wholesale: 1950 } });
+		productItemRepository.set('signature-square-gizmo', { name: 'Signature Square Gizmo', prices: { retail: 2300 } });
+		productItemRepository.set('basic-long-gizmo', { name: 'Basic Long Gizmo', prices: { retail: 3000, wholesale: 2650 } });
+		productItemRepository.set('basic-plus-long-gizmo', { name: 'Basic Plus Long Gizmo', prices: { retail: 4000, wholesale: 3600 } });
+		productItemRepository.set('signature-long-gizmo', { name: 'Signature Long Gizmo', prices: { retail: 10000 } });
+		productItemRepository.set('supreme-long-gizmo', { name: 'Supreme Long Gizmo', prices: { retail: 5000, wholesale: 4200 } });
 	});
 }(require('sitegear3')));

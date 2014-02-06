@@ -1,3 +1,7 @@
 {
-	"name": "Black Carbon Widget"
+	"name": "Black Carbon Widget",
+	"prices": {
+		"retail": 20000,
+		"wholesale": 16000
+	}
 }

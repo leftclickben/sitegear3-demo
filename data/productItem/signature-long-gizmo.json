@@ -1,3 +1,6 @@
 {
-	"name": "Signature Long Gizmo"
+	"name": "Signature Long Gizmo",
+	"prices": {
+		"retail": 10000
+	}
 }

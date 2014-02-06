@@ -1,3 +1,7 @@
 {
-	"name": "Basic Long Gizmo"
+	"name": "Basic Long Gizmo",
+	"prices": {
+		"retail": 3000,
+		"wholesale": 2650
+	}
 }
