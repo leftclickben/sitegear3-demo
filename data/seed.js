@@ -9,9 +9,10 @@
 	sitegear3.ready(function () {
 		// Create and initialise the application instance
 		var app = sitegear3().initialise(require('../settings.json')).persistence('filesystem', { root: __dirname }),
-			pageRepository = app.storage.define('page'),
-			productItemRepository = app.storage.define('productItem'),
-			productCategoryRepository = app.storage.define('productCategory');
+			// TODO Get these from the responsible modules, so that schema/validation and model methods are included
+			pageRepository = app.data.define('page'),
+			productItemRepository = app.data.define('productItem'),
+			productCategoryRepository = app.data.define('productCategory');
 
 		// Add seed data - pages
 		pageRepository.set('index', { title: 'Home Page', main: '<h1>Demo Site</h1>\r\n<p>Demo site for Sitegear3, now implemented in Node.js!</p>\r\n<p>Read all <a href="about">about us</a>, browse our demo <a href="products">products</a> catalogue, or <a href="contact">talk to us</a>.</p>' });
