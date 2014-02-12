@@ -1,6 +1,6 @@
 /*jslint node: true, nomen: true, white: true*/
 /*!
- * Initialise the mongodb data store for the Sitegear3 demo site.
+ * Initialise the data store for the Sitegear3 demo site.
  */
 
 (function (sitegear3) {
