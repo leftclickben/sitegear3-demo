@@ -1,4 +1,0 @@
-{
-	"title": "Home Page",
-	"main": "<h1>Demo Site</h1>\r\n<p>Demo site for Sitegear3, now implemented in Node.js!</p>\r\n<p>Read all <a href=\"about\">about us</a>, browse our demo <a href=\"products\">products</a> catalogue, or <a href=\"contact\">talk to us</a>.</p>"
-}

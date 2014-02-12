@@ -6,6 +6,6 @@
 This is the {{ item.name.toLowerCase() }} product details page.
 </p>
 <p>
-The price is {{ getDisplayPrice(item.getPrice(user)) }}.
+The price is {{ formatCurrency(item.getPrice(user)) }}.
 </p>
 {% endblock %}
