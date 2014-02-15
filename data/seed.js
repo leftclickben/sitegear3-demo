@@ -7,7 +7,7 @@
 	"use strict";
 
 	var // Initialise the application object
-		app = sitegear3(require('../settings.json')).persistence('filesystem', { root: __dirname }),
+		app = sitegear3(require('../settings.json')).connect('filesystem', { root: __dirname }),
 
 		// Get repositories from modules
 		pageRepository = app.module('default').pageRepository,
