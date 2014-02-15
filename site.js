@@ -11,7 +11,7 @@
 	"use strict";
 
 	// Create the application instance
-	var app = sitegear3();
+	var app = sitegear3(require('./settings.json'));
 
 	// Pre-configure
 	if (app.get('env') === 'development') {
@@ -19,8 +19,7 @@
 	}
 
 	// Generic setup code
-	app.initialise(require('./settings.json'))
-		.use(poweredBy('sitegear3'))
+	app .use(poweredBy('sitegear3'))
 		.use(sitegear3.connect.logger())
 		.use(sitegear3.connect.compress())
 		.use(sitegear3.connect.static(__dirname + '/static'))
