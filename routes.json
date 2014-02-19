@@ -1,16 +1,16 @@
 [
 	{
 		"path": "/products",
-		"domain": "products"
+		"component": "products"
 	},
 	{
 		"path": "/products/category/:category",
-		"domain": "products",
+		"component": "products",
 		"action": "category"
 	},
 	{
 		"path": "/products/item/:item",
-		"domain": "products",
+		"component": "products",
 		"action": "item"
 	},
 	{
