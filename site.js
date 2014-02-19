@@ -7,7 +7,7 @@
  * express-compatible engine.
  */
 
-(function (poweredBy, sitegear3, swig, fs) {
+(function (poweredBy, sitegear3, swig, fs, filesystemConnector) {
 	"use strict";
 
 	// Create the application instance
@@ -30,7 +30,7 @@
 		.use(app.router)
 		.use(sitegear3.middleware.notFound())
 		.use(sitegear3.middleware.internalServerError())
-		.connect('filesystem', { root: __dirname + '/data' })
+		.connect(filesystemConnector({ root: __dirname + '/data' }))
 		.configureRoutes(require('./routes.json'))
 		.engine('html', swig.renderFile)
 		.set('views', __dirname + '/templates');
@@ -46,4 +46,4 @@
 		app.start({ pfx: data }, 8443);
 	});
 
-}(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs')));
+}(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs'), require('./node_modules/sitegear3/lib/data/connectors/filesystem')));

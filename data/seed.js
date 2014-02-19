@@ -3,11 +3,11 @@
  * Initialise the data store for the Sitegear3 demo site.
  */
 
-(function (sitegear3) {
+(function (sitegear3, filesystemConnector) {
 	"use strict";
 
 	var // Initialise the application object
-		app = sitegear3(require('../settings.json')).connect('filesystem', { root: __dirname }),
+		app = sitegear3(require('../settings.json')).connect(filesystemConnector({ root: __dirname })),
 
 		// Get repositories from modules
 		pageRepository = app.module('default').pageRepository,
@@ -61,4 +61,4 @@
 	// Bootstrap
 	clear(seed);
 
-}(require('sitegear3')));
+}(require('sitegear3'), require('../node_modules/sitegear3/lib/data/connectors/filesystem')));
