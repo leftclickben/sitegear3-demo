@@ -5,6 +5,7 @@
   "homepage": "http://testdrive.sitegear.org/",
   "dependencies": {
     "sitegear3": "*",
+	"sitegear3-adapter-filesystem": "*",
     "swig": "*",
     "connect-powered-by": "*"
   }

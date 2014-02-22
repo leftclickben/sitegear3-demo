@@ -46,4 +46,4 @@
 		app.start({ pfx: data }, 8443);
 	});
 
-}(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs'), require('./node_modules/sitegear3/lib/data/connectors/filesystem')));
+}(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs'), require('sitegear3-adapter-filesystem')));
