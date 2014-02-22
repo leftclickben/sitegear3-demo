@@ -9,10 +9,10 @@
 	var // Initialise the application object
 		app = sitegear3(require('../settings.json')).connect(filesystemConnector({ root: __dirname })),
 
-		// Get repositories from modules
-		pageRepository = app.module('default').pageRepository,
-		productItemRepository = app.module('products').itemRepository,
-		productCategoryRepository = app.module('products').categoryRepository,
+		// Get repositories from components
+		pageRepository = app.component('default').pageRepository,
+		productItemRepository = app.component('products').itemRepository,
+		productCategoryRepository = app.component('products').categoryRepository,
 
 		// Remove existing data
 		clear = function (callback) {
@@ -61,4 +61,4 @@
 	// Bootstrap
 	clear(seed);
 
-}(require('sitegear3'), require('../node_modules/sitegear3/lib/data/connectors/filesystem')));
+}(require('sitegear3'), require('sitegear3-adapter-filesystem')));
