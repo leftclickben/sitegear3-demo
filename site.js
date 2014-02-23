@@ -31,15 +31,8 @@
 		.engine('html', swig.renderFile)
 		.set('views', __dirname + '/templates');
 
-	// Start http
+	// Start http and https
 	app.start(8080);
-
-	// Read PFX and start https in callback
-	fs.readFile('./certificates/localhost.pfx', function (error, data) {
-		if (error) {
-			throw error;
-		}
-		app.start({ pfx: data }, 8443);
-	});
+	app.startSecure(__dirname + '/certificates/localhost.pfx', 8443);
 
 }(require('connect-powered-by'), require('sitegear3'), require('connect'), require('swig'), require('fs'), require('sitegear3-adapter-filesystem')));
