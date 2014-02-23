@@ -7,7 +7,7 @@
  * express-compatible engine.
  */
 
-(function (poweredBy, sitegear3, swig, fs, filesystemConnector) {
+(function (poweredBy, sitegear3, connect, swig, fs, filesystemConnector) {
 	"use strict";
 
 	// Create the application instance
@@ -20,18 +20,14 @@
 
 	// Generic setup code
 	app .use(poweredBy('sitegear3'))
-		.use(sitegear3.connect.logger())
-		.use(sitegear3.connect.compress())
-		.use(sitegear3.connect.static(__dirname + '/static'))
-		.use(sitegear3.connect.cookieParser())
-		.use(sitegear3.connect.cookieSession({ "baseKey": "sitegear3.session", "secret": "Sitegear3" }))
-		.use(sitegear3.connect.csrf())
-		.use(sitegear3.middleware.prepareView(app))
-		.use(app.router)
-		.use(sitegear3.middleware.notFound())
-		.use(sitegear3.middleware.internalServerError())
+		.use(connect.logger())
+		.use(connect.compress())
+		.use(connect.static(__dirname + '/static'))
+		.use(connect.cookieParser())
+		.use(connect.cookieSession({ "baseKey": "sitegear3.session", "secret": "Sitegear3" }))
+		.use(connect.csrf())
 		.connect(filesystemConnector({ root: __dirname + '/data' }))
-		.configureRoutes(require('./routes.json'))
+		.routing(require('./routes.json'))
 		.engine('html', swig.renderFile)
 		.set('views', __dirname + '/templates');
 
@@ -46,4 +42,4 @@
 		app.start({ pfx: data }, 8443);
 	});
 
-}(require('connect-powered-by'), require('sitegear3'), require('swig'), require('fs'), require('sitegear3-adapter-filesystem')));
+}(require('connect-powered-by'), require('sitegear3'), require('connect'), require('swig'), require('fs'), require('sitegear3-adapter-filesystem')));

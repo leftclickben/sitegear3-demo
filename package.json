@@ -7,6 +7,7 @@
     "sitegear3": "*",
 	"sitegear3-adapter-filesystem": "*",
     "swig": "*",
+	"connect": "*",
     "connect-powered-by": "*"
   }
 }
